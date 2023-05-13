@@ -1,0 +1,27 @@
+<p>template-form works!</p>
+<h1>template-form</h1>
+<form #ng="ngForm" (ngSubmit)="onSubmit(ng)">
+    <label for="name">User Name:</label>
+    <input type="text" name="name" #name="ngModel" ngModel><br><br>
+    <label for="pass">Password:</label>
+    <input type="password" name="pass" #pass="ngModel" ngModel><br><br>
+    <label for="age">Age:</label>
+    <input type="number" name="age" #age="ngModel" ngModel> <br><br>
+    <label for="rollno">Roll_No:</label>
+    <input type="number" name="rollno" #rollno="ngModel" ngModel> <br><br>
+    <button type="submit">Submit</button>
+</form>
+<table class="table table-resposive">
+    <tr>
+        <th>Username</th>
+        <th>password</th>
+        <th>age</th>
+        <th>Roll-no</th>
+    </tr>
+    <tr *ngFor="let test of alldata">
+        <td>{{test.name}}</td>
+        <td>{{test.pass}}</td>
+        <td>{{test.age}}</td>
+        <th>{{test.rollno}}</th>
+    </tr>
+</table>

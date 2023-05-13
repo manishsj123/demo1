@@ -1,0 +1,18 @@
+<p>directives works!</p>
+<h2>Structural directives</h2>
+
+<p *ngIf="showflag || age > 18" >Welcome to code ng</p>
+
+<select [(ngModel)]=" selcon">
+    <option *ngFor="let con of cuntry">{{con}}</option>
+</select>
+<br><br>
+<table class="table table-responsive" border="2px">
+    <tr>
+        <td *ngFor="let con of cuntry">{{con}}</td>
+    </tr>
+</table>
+
+<h2>Attribute Directives</h2><br>
+<p class="test">This is P tag with class</p>
+<p [ngClass]="testc">This is P tag with ngClass</p>

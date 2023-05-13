@@ -1,0 +1,55 @@
+<div class="container">
+<form [formGroup]="myForm" (ngSubmit)="onsubmitbtn()">
+    
+
+    <div class="form-group">
+        <label for="uname" >UserName :</label>
+        <input type="text" name="uname" formControlName="uname" class="form-control"
+        required [ngClass]="{'is-invalid':test && myForm.controls.uname.errors}">
+    
+
+        <div *ngIf="myForm.controls.uname.touched" class="invalid-feedback"> </div>
+        <div *ngIf="myForm.controls.uname.errors?.required" class="invalid-feedback">This feild is required</div>
+        <div *ngIf="myForm.controls.uname.errors?.minlength">Minum 3 letters required</div>
+        
+    </div>
+
+    <label for="lname">last Name</label>
+    <input type="text" name="lname" class="form-control" formControlName="lname"
+    required [ngClass]="{'is-invalid':test && myForm.controls.lname.errors}">
+
+    <div *ngIf="myForm.controls.lname.errors?.required" class="invalid-feedback">
+        last name is required
+    </div> 
+
+
+    <div class="form-group">
+        <label for="email" class="form-label">Email :</label>
+        <input type="text" name="email" formControlName="email" class="form-control" 
+        required [ngClass]="{'is-invalid':test && myForm.controls.email.errors}">
+    
+
+        <div *ngIf="myForm.controls.email.touched" class="invalid-feedback"></div>
+        <div *ngIf="myForm.controls.email.errors?.required" class="invalid-feedback">This feild is required</div>
+        <div *ngIf="myForm.controls.email.errors?.email">Please enter vaild email ID</div>
+        
+    </div>
+
+    <div class="form-group">
+        <label for="PassWord" class="form-label">PassWord :</label>
+        <input type="password" name="pass" formControlName="pass" class="form-control"
+        [ngClass]="{'is-invalid': test && myForm.controls.pass.errors}" required>
+    
+
+        <div *ngIf="myForm.controls.pass.touched" class="invalid-feedback"> </div>
+        <div *ngIf="myForm.controls.pass.errors?.required" class="invalid-feedback">This feild is required</div>
+        <div *ngIf="myForm.controls.pass.errors?.minlength">Minum 3 letters required</div>
+       
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-success mt-3">Submit</button>
+    </div>
+
+</form>
+</div>
